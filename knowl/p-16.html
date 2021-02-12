@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-01-12T08:20:09-05:00    *-->
+<!--*    on 2021-02-12T15:02:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,18 +10,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Therefore the case \(r=i\) and \(i&lt;s&lt;j\) yields</p>
-<div class="displaymath">
-\begin{align*}
-B&amp;=(n-i-1)+(n-i-2)+\cdots+(n-j+1)\\
-&amp;=\sum_{m=1}^{n-i-1}m-\sum_{m=1}^{n-j}m\\
-&amp;=\binom{n-i}{2}-\binom{n-j+1}{2}
-\end{align*}
-</div>
-<p data-braille="continuation">elements.</p>
-<span class="incontext"><a href="trivialH2_theory.html#p-16">in-context</a></span>
+<p>or with respect to the cyclotomic field \(\mathbb{Q}\left(e^{2i\pi/3}\right)\) for the Lie algebra we obtain when we take \(t=-e^{2i\pi/3}\) <div class="sagecell-sage" id="sage-12"><script type="text/x-sage">x = - exp(2*I*pi/3)
+Field = CyclotomicField(3)
+#####
+SpecializedTable = SpecializeTable(ShiftedTable, x)
+SC = FillSC(Field, SpecializedTable, Dimension)
+print(TrivialBettiNumbers(Field, SC))
+</script></div></p>
+<span class="incontext"><a href="trivialcohomology_examples.html#p-16">in-context</a></span>
 </body>
 </html>

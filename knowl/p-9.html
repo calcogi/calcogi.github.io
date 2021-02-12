@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-01-12T08:20:08-05:00    *-->
+<!--*    on 2021-02-12T15:05:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,22 +10,35 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>First observe that if we denote</p>
-<div class="displaymath">
-\begin{equation*}
-(r,s)&lt;(i,j)
-\end{equation*}
-</div>
-<p data-braille="continuation">the lexicographical order, then</p>
-<div class="displaymath">
-\begin{equation*}
-u=\left|\{(r,s)\in S\,|\,(r,s)\leq (i,j)\}\right|.
-\end{equation*}
-</div>
-<p data-braille="continuation">So we have to count how many elements of \(S\) were already listed before reaching the element \((i,j)\) plus one for the latter.</p>
-<span class="incontext"><a href="trivialH2_theory.html#p-9">in-context</a></span>
+<p>And now here is how we compute the nontrivial Betti numbers</p>
+<ul class="disc">
+<li><p>with respect to the field \(\mathbb{Q}\) for the Lie algebra we obtain when we take \(t=2\) <div class="sagecell-sage" id="sage-5"><script type="text/x-sage">x = 2
+Field = QQ
+#####
+SpecializedTable = SpecializeTable(ShiftedTable, x)
+SC = FillSC(Field, SpecializedTable, Dimension)
+print(TrivialBettiNumbers(Field, SC))
+</script></div></p></li>
+<li><p>or with respect to the cyclotomic field \(\mathbb{Q}\left(e^{2i\pi/3}\right)\) for the Lie algebra we obtain when we take \(t=-e^{2i\pi/3}\) <div class="sagecell-sage" id="sage-6"><script type="text/x-sage">x = - exp(2*I*pi/3)
+Field = CyclotomicField(3)
+#####
+SpecializedTable = SpecializeTable(ShiftedTable, x)
+SC = FillSC(Field, SpecializedTable, Dimension)
+print(TrivialBettiNumbers(Field, SC))
+</script></div></p></li>
+</ul>
+<span class="incontext"><a href="trivialcohomology_examples.html#p-9">in-context</a></span>
 </body>
 </html>

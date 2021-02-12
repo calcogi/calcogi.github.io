@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2021-01-12T08:20:08-05:00    *-->
+<!--*    on 2021-02-12T15:05:22-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -10,29 +10,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>It is convenient to split them by rows</p>
-<div class="displaymath">
-\begin{align*}
-\mathrm{R}_1&amp;=\{(1,2),\ldots,(1,n)\}\\
-\mathrm{R}_2&amp;=\{(2,3),\ldots,(2,n)\}\\
-&amp;\ldots\\
-\mathrm{R}_{i-1}&amp;=\{(i-1,i),\ldots,(i-1,n)\}\\
-\mathrm{R}_i&amp;=\{(i,i+1),\ldots,(i,j)\}
-\end{align*}
-</div>
-<p data-braille="continuation">and then count the elements in each row:</p>
-<div class="displaymath">
-\begin{align*}
-|\mathrm{R}_1|&amp;=n-1,\\
-|\mathrm{R}_2|&amp;=n-2,\\
-&amp;\ldots\\
-|\mathrm{R}_{i-1}|&amp;=n-i+1,\\
-|\mathrm{R}_i|&amp;=j-i.
-\end{align*}
-</div>
-<span class="incontext"><a href="trivialH2_theory.html#p-10">in-context</a></span>
+<p>with respect to the field \(\mathbb{Q}\) for the Lie algebra we obtain when we take \(t=2\) <div class="sagecell-sage" id="sage-5"><script type="text/x-sage">x = 2
+Field = QQ
+#####
+SpecializedTable = SpecializeTable(ShiftedTable, x)
+SC = FillSC(Field, SpecializedTable, Dimension)
+print(TrivialBettiNumbers(Field, SC))
+</script></div></p>
+<span class="incontext"><a href="trivialcohomology_examples.html#p-10">in-context</a></span>
 </body>
 </html>
